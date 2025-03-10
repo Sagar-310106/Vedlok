@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #000;
+}
+
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('public/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: transform 1s ease-out;
+    transform-origin: center center;
+}
+
+.background.zoomed {
+    transform: scale(1.4);
+}
+
+.logo-background {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 1200px);
+    height: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.vedlok-logo {
+    width: min(95%, 1400px);
+    opacity: 0;
+    transform: translateY(50vh) scale(0.2);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vedlok-logo.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.foreground {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 1s ease-out;
+    pointer-events: none;
+}
+
+.foreground.scrolled {
+    transform: translate(-50%, 50%) scale(0.9);
+}
+
+.krishna-image {
+    height: 200vh;
+    object-fit: contain;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-out;
+    object-position: bottom;
+    margin-bottom: 0;
+}
+
+.krishna-image.scaled {
+    height: 180vh;
+}
+
+.content {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    width: min(90%, 1200px);
+    text-align: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    top: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.welcome-btn {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    opacity: 0;
+    transform: translateY(160px);
+    pointer-events: auto;
+    position: relative;
+    z-index: 101;
+}
+
+.content.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.content.visible .welcome-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.welcome-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    background-color: #FFE55C;
+}
+
+.main-nav {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.3s;
+    width: 100%;
+    pointer-events: auto;
+    position: relative;
+    z-index: 101;
+}
+
+.main-nav.visible {
+    opacity: 1;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 14.5rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 102;
+}
+
+.main-nav a:hover {
+    color: #FFF;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.scroll-section {
+    height: 200vh;
+    position: relative;
+    z-index: 0;
+}
+
+/* Removing all media queries */ 
