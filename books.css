@@ -1,0 +1,132 @@
+.book-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a0f0a 0%, #000000 100%);
+    padding-top: 80px;
+}
+
+.book-hero {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFD700;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.book-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ramayana-hero {
+    background-image: url('public/ramayana-bg.jpg');
+    background-position: bottom;
+}
+
+.mahabharata-hero {
+    background-image: url('public/mahabharata-bg.jpg');
+    background-position: bottom;
+}
+
+.bhagavad-gita-hero {
+    background-image: url('public/bhagwad-gita-bg.jpg');
+    background-position: bottom;
+}
+
+.book-hero h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.book-hero p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.book-options {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.option-content {
+    color: #FFD700;
+}
+
+.option-content i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-content h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.option-content p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.option-btn {
+    display: inline-block;
+    color: #FFD700;
+    text-decoration: none;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    border: 2px solid #FFD700;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+    background: #FFD700;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+} 

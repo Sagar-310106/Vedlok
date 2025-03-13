@@ -114,21 +114,21 @@ body {
     width: min(90%, 1200px);
     text-align: center;
     z-index: 100;
-    opacity: 0;
-    pointer-events: none;
     top: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    transition: opacity 0.5s ease;
-    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: auto;
 }
 
 .content.visible {
     opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
+}
+
+.content:not(.visible) {
+    opacity: 0;
 }
 
 .welcome-btn {
@@ -141,71 +141,84 @@ body {
     font-weight: 700;
     border-radius: 25px;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    opacity: 0;
-    transform: translateY(0);
-    pointer-events: auto;
     position: relative;
     z-index: 101;
     letter-spacing: 0.05em;
-    visibility: hidden;
+    overflow: hidden;
+    pointer-events: auto;
 }
 
 .welcome-btn.visible {
     opacity: 1;
-    visibility: visible;
 }
 
-.welcome-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    background-color: #FFE55C;
+.welcome-btn:not(.visible) {
+    opacity: 0;
 }
 
 .main-nav {
-    opacity: 0;
-    transition: opacity 0.3s ease;
     width: 100%;
-    pointer-events: auto;
     position: relative;
     z-index: 101;
-    visibility: hidden;
-}
-
-.main-nav.visible {
+    transition: all 0.3s ease;
+    pointer-events: auto;
     opacity: 1;
-    visibility: visible;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 14.5rem;
-    flex-wrap: wrap;
+    gap: 4rem;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    pointer-events: auto;
+    padding: 0.5rem 0.5rem;
 }
 
 .main-nav a {
     color: #FFD700;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: 'Philosopher', sans-serif;
     font-weight: 700;
     letter-spacing: 0.08rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     padding: 0.5rem 1rem;
     display: inline-block;
     cursor: pointer;
     position: relative;
     z-index: 102;
+    pointer-events: auto;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .main-nav a:hover {
     color: #FFF;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: translateY(-5px);
+    letter-spacing: 0.12rem;
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.main-nav a:active {
+    transform: translateY(-2px);
 }
 
 .scroll-section {
@@ -430,6 +443,158 @@ body {
 .vision-logo:hover {
     transform: scale(1.1) translateX(-10px);
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+}
+
+.connect-section {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a0f0a 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.connect-content {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.connect-title {
+    color: #FFD700;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    letter-spacing: 0.02em;
+}
+
+.connect-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #FFD700;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(139, 69, 19, 0.2);
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 215, 0, 0.5);
+}
+
+.submit-btn {
+    background-color: #FFD700;
+    color: #251703;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    background-color: #FFE55C;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    color: #FFD700;
+    font-size: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.social-link:hover {
+    transform: scale(1.15);
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.github {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.github:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.linkedin {
+    text-shadow: 0 0 10px rgba(0, 119, 181, 0.5);
+}
+
+.linkedin:hover {
+    color: #0077B5;
+    text-shadow: 0 0 15px rgba(0, 119, 181, 0.8);
+}
+
+.instagram {
+    text-shadow: 0 0 10px rgba(225, 48, 108, 0.5);
+}
+
+.instagram:hover {
+    color: #E1306C;
+    text-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
+}
+
+/* Remove old social media styles */
+.whatsapp img,
+.instagram img,
+.youtube img {
+    display: none;
 }
 
 /* Removing all media queries */ 

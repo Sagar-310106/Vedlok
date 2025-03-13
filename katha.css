@@ -1,0 +1,176 @@
+.katha-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a0f0a 0%, #000000 100%);
+}
+
+.katha-hero {
+    height: 60vh;
+    background-image: url('public/katha-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFD700;
+    position: relative;
+}
+
+.katha-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.katha-hero h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.katha-hero p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.katha-content {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.katha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.katha-card {
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.katha-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.katha-card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.katha-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.katha-card:hover .katha-card-image img {
+    transform: scale(1.1);
+}
+
+.katha-card-content {
+    padding: 1.5rem;
+    color: #FFD700;
+    position: relative;
+    z-index: 5;
+}
+
+.katha-card-content h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.katha-card-content p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: #FFD700;
+    text-decoration: none;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #FFD700;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.read-more:hover {
+    background: #FFD700;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Navigation styles for other pages */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.main-nav a:hover {
+    color: #FFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.main-nav a.active {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFF;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+} 
