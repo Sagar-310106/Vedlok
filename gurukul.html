@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gurukul - Vedlok</title>
+    <title>Gurukul - VEDLOK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="gurukul.css">
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="main-nav">
@@ -20,18 +22,49 @@
         </ul>
     </nav>
 
-    <main class="gurukul-container">
-        <section class="gurukul-hero">
+    <div class="gurukul-container">
+        <div class="gurukul-hero">
             <h1>Gurukul</h1>
-            <p>Traditional learning and spiritual education</p>
-        </section>
+            <p>Explore the depths of Hindu knowledge and wisdom</p>
+        </div>
 
-        <section class="gurukul-content">
+        <div class="gurukul-content">
             <div class="gurukul-grid">
-                <!-- Gurukul content will be added here -->
+                <a href="dashavatars.html" class="gurukul-card">
+                    <div class="card-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <h2>Dashavatars</h2>
+                    <p>Explore the ten divine incarnations of Lord Vishnu</p>
+                    <div class="card-hover">
+                        <span>Explore</span>
+                    </div>
+                </a>
+
+                <a href="aryavrata.html" class="gurukul-card">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h2>Aryavrata</h2>
+                    <p>Journey through the sacred lands of ancient India</p>
+                    <div class="card-hover">
+                        <span>Explore</span>
+                    </div>
+                </a>
+
+                <a href="guru.html" class="gurukul-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>Guru</h2>
+                    <p>Your virtual guide to Hindu wisdom (Coming Soon)</p>
+                    <div class="card-hover">
+                        <span>Coming Soon</span>
+                    </div>
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script src="gurukul.js"></script>
 </body>

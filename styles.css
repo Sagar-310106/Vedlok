@@ -597,4 +597,60 @@ body {
     display: none;
 }
 
-/* Removing all media queries */ 
+/* Removing all media queries */
+
+/* Go to Top Button */
+.go-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 215, 0, 0.9);
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bow-arrow-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    filter: invert(0);
+}
+
+.go-to-top:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+.go-to-top:hover .bow-arrow-icon {
+    filter: invert(1);
+    transform: scale(1.1);
+}
+
+.go-to-top.visible {
+    display: flex;
+}
+
+/* Add animation for the button */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.go-to-top.visible {
+    animation: fadeIn 0.3s ease forwards;
+} 

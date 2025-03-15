@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryavrata - VEDLOK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="aryavrata.css">
+</head>
+<body>
+    <div class="aryavrata-container">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="katha.html">Katha</a></li>
+                <li><a href="gurukul.html" class="active">Gurukul</a></li>
+                <li><a href="pachang.html">Pachang</a></li>
+                <li><a href="gyaan.html">Gyaan</a></li>
+            </ul>
+        </nav>
+
+        <div class="aryavrata-hero">
+            <h1>Aryavrata</h1>
+            <p>Journey through the sacred lands of ancient India</p>
+        </div>
+
+        <div class="aryavrata-content">
+            <div class="map-container">
+                <div class="map-controls">
+                    <select id="location-select" class="location-dropdown">
+                        <option value="">Select a Sacred Place</option>
+                        <option value="hastinapur">Hastinapur</option>
+                        <option value="kurukshetra">Kurukshetra</option>
+                        <option value="ayodhya">Ayodhya</option>
+                        <option value="mathura">Mathura</option>
+                        <option value="dwarka">Dwarka</option>
+                        <option value="chitrakoot">Chitrakoot</option>
+                        <option value="panchavati">Panchavati</option>
+                        <option value="lanka">Lanka</option>
+                        <option value="kishkindha">Kishkindha</option>
+                        <option value="indraprastha">Indraprastha</option>
+                        <option value="kashi">Kashi</option>
+                        <option value="haridwar">Haridwar</option>
+                        <option value="kanchi">Kanchi</option>
+                        <option value="ujjain">Ujjain</option>
+                    </select>
+                </div>
+                <div class="map-wrapper">
+                    <img src="public/map/ancient-india-map.png" alt="Ancient India Map" class="base-map">
+                    <div class="location-markers">
+                        <!-- Location markers will be added dynamically via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-info">
+                <div class="info-content">
+                    <h2>Welcome to Aryavrata</h2>
+                    <p>Select a location from the dropdown menu to learn about its historical significance.</p>
+                    <div class="location-details">
+                        <div class="location-image">
+                            <img src="" alt="" class="place-image">
+                        </div>
+                        <h3></h3>
+                        <p class="description"></p>
+                        <p class="significance"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="aryavrata.js"></script>
+</body>
+</html> 

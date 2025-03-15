@@ -150,4 +150,25 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Thank you for connecting with us! We will get back to you soon.');
         form.reset();
     });
+
+    // Go to Top Button Functionality
+    const goToTopButton = document.getElementById('goToTop');
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        const parallaxBottom = parallaxContainer.offsetTop + parallaxContainer.offsetHeight;
+        if (window.scrollY > parallaxBottom) {
+            goToTopButton.classList.add('visible');
+        } else {
+            goToTopButton.classList.remove('visible');
+        }
+    });
+
+    // Smooth scroll to top when button is clicked
+    goToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 }); 
